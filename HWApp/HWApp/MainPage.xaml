@@ -4,8 +4,41 @@
              xmlns:local="clr-namespace:HWApp"
              x:Class="HWApp.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SliderConverter x:Key="SliderConverter"></local:SliderConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+
+                <StackLayout Orientation="Vertical">
+                    <Slider x:Name="AppSlider" Maximum="100" Minimum="0"  Value="{Binding AppSliderValue  , Converter={StaticResource SliderConverter} }">
+
+                    </Slider>
+
+                    <Switch x:Name="AppSwitch" IsToggled="{Binding AppSliderValue }"></Switch>
+
+                    <DatePicker x:Name="DatePicker" VerticalOptions="CenterAndExpand" DateSelected="DatePicker_DateSelected" >
+                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                    </DatePicker>
+                    <Label x:Name="date" Text="{Binding date}"></Label>
+                    <Label x:Name="time" Text="{Binding time}"></Label>
+
+                    <Entry x:Name="siteweb" Text="http://www.xamarin.com/"></Entry>
+                    <Button Clicked="Button_OnClicked" Text="Open WebView"></Button>
+                    <Button Clicked="Button_OnClicked2" Text="Open PickerView"></Button>
+
+                </StackLayout>
+
+                
+                
+
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
 
 </ContentPage>

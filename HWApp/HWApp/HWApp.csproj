@@ -5,7 +5,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\bird1.jpg" />
+    <None Remove="Images\bird2.jpg" />
+    <None Remove="Images\bird3.jpg" />
+    <None Remove="Images\cat1.jpg" />
+    <None Remove="Images\cat2.jpg" />
+    <None Remove="Images\cat3.jpg" />
+    <None Remove="Images\dog1.jpg" />
+    <None Remove="Images\dog2.jpg" />
+    <None Remove="Images\dog3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\dog1.jpg" />
+    <EmbeddedResource Include="Images\cat1.jpg" />
+    <EmbeddedResource Include="Images\bird1.jpg" />
+    <EmbeddedResource Include="Images\dog2.jpg" />
+    <EmbeddedResource Include="Images\cat2.jpg" />
+    <EmbeddedResource Include="Images\bird2.jpg" />
+    <EmbeddedResource Include="Images\dog3.jpg" />
+    <EmbeddedResource Include="Images\cat3.jpg" />
+    <EmbeddedResource Include="Images\bird3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+    <PackageReference Include="Xamarin.Forms.CarouselView" Version="2.3.0-pre2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Images\bird1.jpg" />
+    <Page Include="Images\bird2.jpg" />
+    <Page Include="Images\bird3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,5 +46,14 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="PickerView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WebView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

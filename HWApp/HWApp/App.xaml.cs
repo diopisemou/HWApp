@@ -13,7 +13,7 @@ namespace HWApp
 		{
 			InitializeComponent();
 
-			MainPage = new HWApp.MainPage();
+			MainPage = new NavigationPage(new HWApp.MainPage());
 		}
 
 		protected override void OnStart ()
